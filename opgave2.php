@@ -77,6 +77,9 @@ $boekhouding1920 = new Worksheet('Boekhouding Bedrijf X 20192020');
 $boekhouding2021 = new Worksheet('Boekhouding Bedrijf X 20202021');
 $grafiekresult = new Drawing('Resultaten boekjaar 2019 - 2020');
 $bedrijfdocs = array($handleiding, $boekhouding1920, $boekhouding2021, $grafiekresult);
-foreach ($bedrijfdocs as $doc) {
-    echo $doc->getNaam() . " (" .  $doc->getDocType() . ")<br>";
+for ($x = 0; $x < count($bedrijfdocs); $x++) {
+    $doc = $bedrijfdocs[$x];
+    echo "<ul>";
+    echo "<li>" . $doc->getNaam() . " (" .  $doc->getDocType() . ")</li>";
+    echo "</ul>";
 }
