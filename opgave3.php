@@ -63,7 +63,10 @@ class Triangle implements IShape
     public function calculateSurface()
     {
         $s = $this->calculatePerimiter() / 2;
-        return sqrt($s($s - $this->side1)($s - $this->side2)($s - $this->side3));
+        $a = $s - $this->side1;
+        $b = $s - $this->side2;
+        $c = $s - $this->side3;
+        return sqrt($s * $a * $b * $c);
     }
 
     public function calculatePerimiter()
